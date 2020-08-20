@@ -244,3 +244,24 @@ Copyright (c) 2020 Sherif Abdel-Naby
 # Contribution
 
 PR(s) are Open and Welcomed.
+
+# Setting change for Fess
+
+elastdocker/elasticsearch/Dockerfile
+
+```yaml
+ARG ELK_VERSION
+ENV ELKV $ELK_VERSION
+RUN elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-fess:${ELKV}; \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-extension:${ELKV}; \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-configsync:${ELKV}; \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-dataformat:${ELKV}; \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-minhash:${ELKV}
+```
+
+elastdocker/elasticsearch/config/elasticsearch.yml
+
+```yaml
+# For FESS https://fess.codelibs.org
+configsync.config_path: /var/lib/elasticsearch/config
+```
