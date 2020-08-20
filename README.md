@@ -26,6 +26,7 @@
 
 # Introduction
 Elastic Stack (AKA **ELK**) Docker Composition, preconfigured with **Security**, **Monitoring**, Tools such as **ElastAlert** for alerting, **Rubban** and **Curator**.
+This setup include plugins for Fess. Fess Crawler is a crawler library for crawling a web site and a file system.
 
 Based on [Official Elastic Docker Images](https://www.docker.elastic.co/)
 
@@ -44,6 +45,7 @@ Stack Version: [7.8.0](https://www.elastic.co/blog/elastic-stack-7-8-0-released)
 - [ElastAlert](https://github.com/Yelp/elastalert) preconfigured for Alerting.
 - [Curator](https://github.com/elastic/curator) with Crond preconfigured for Automated Scheduled tasks (e.g Snapshots to S3).
 - [Rubban](https://github.com/sherifabdlnaby/rubban) for Kibana curating tasks.
+- [Fess Crawler Plugins](https://fess.codelibs.org)for Fess Crawler 
 - Embedded Container Healthchecks for Stack Images.
 
 #### More points
