@@ -245,23 +245,37 @@ Copyright (c) 2020 Sherif Abdel-Naby
 
 PR(s) are Open and Welcomed.
 
-# Setting change for Fess
+# Setting change for Fess by Harisfazillah Jamel 22 Aug 2020
 
-elastdocker/elasticsearch/Dockerfile
+### Setup for Fess
+
+1. Clone the Repository
+     ```bash
+     git clone https://github.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess.git
+     ```
+
+and continue follow above steps
+
+### Changes Note
+
+elastdocker_fess/elasticsearch/Dockerfile
 
 ```yaml
 ARG ELK_VERSION
 ENV ELKV $ELK_VERSION
-RUN elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-fess:${ELKV}; \
-elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-extension:${ELKV}; \
-elasticsearch-plugin install --batch org.codelibs:elasticsearch-configsync:${ELKV}; \
-elasticsearch-plugin install --batch org.codelibs:elasticsearch-dataformat:${ELKV}; \
+RUN mkdir /usr/share/elasticsearch/config/dictionary && \
+chown elasticsearch /usr/share/elasticsearch/config/dictionary && \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-fess:${ELKV} && \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-extension:${ELKV} && \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-configsync:${ELKV} && \
+elasticsearch-plugin install --batch org.codelibs:elasticsearch-dataformat:${ELKV} && \
 elasticsearch-plugin install --batch org.codelibs:elasticsearch-minhash:${ELKV}
 ```
 
-elastdocker/elasticsearch/config/elasticsearch.yml
+elastdocker_fess/elasticsearch/config/elasticsearch.yml
 
 ```yaml
 # For FESS https://fess.codelibs.org
-configsync.config_path: /var/lib/elasticsearch/config
+# https://github.com/codelibs/fess/issues/1967
+configsync.config_path: /usr/share/elasticsearch/config/dictionary
 ```

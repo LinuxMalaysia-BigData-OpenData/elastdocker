@@ -35,4 +35,5 @@ xpack.monitoring.enabled: true
 xpack.monitoring.collection.enabled: true
 
 # For FESS https://fess.codelibs.org
-configsync.config_path: /var/lib/elasticsearch/config
+# https://github.com/codelibs/fess/issues/1967
+configsync.config_path: /usr/share/elasticsearch/config/dictionary
