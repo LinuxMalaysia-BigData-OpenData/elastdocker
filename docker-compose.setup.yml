@@ -6,6 +6,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: ${ELK_VERSION}
+        FESSPLG_ELK_VERSION: ${FESSPLG_ELK_VERSION}
     command: bash /setup/setup-keystore.sh
     user: "0"
     volumes:
@@ -27,3 +28,4 @@ services:
     volumes:
       - ./secrets:/secrets
       - ./setup/:/setup/
+
