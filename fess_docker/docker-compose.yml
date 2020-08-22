@@ -25,6 +25,8 @@ services:
   fess01:
     image: codelibs/fess:13.8.2
     container_name: fess01
+    volumes:
+      - ./fess-data:/usr/share/fess/data
     environment:
       - RUN_ELASTICSEARCH=false
       - "ES_HTTP_URL=http://ngxproxy01:19200"
