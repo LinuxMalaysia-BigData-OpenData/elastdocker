@@ -10,8 +10,8 @@ HEALTHCHECK CMD sh ./docker-healthcheck
 # Add your elasticsearch plugins setup here
 # Example: RUN elasticsearch-plugin install analysis-icu
 # RUN elasticsearch-plugin install --batch repository-s3
-ARG ELK_VERSION
-ENV ELKV $ELK_VERSION
+ARG FESSPLG_ELK_VERSION
+ENV ELKV $FESSPLG_ELK_VERSION
 RUN mkdir /usr/share/elasticsearch/config/dictionary && \
 chown elasticsearch /usr/share/elasticsearch/config/dictionary && \
 elasticsearch-plugin install --batch org.codelibs:elasticsearch-analysis-fess:${ELKV} && \

@@ -11,6 +11,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: ${ELK_VERSION}
+        FESSPLG_ELK_VERSION: ${FESSPLG_ELK_VERSION}
 #    restart: unless-stopped
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}
@@ -46,6 +47,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: ${ELK_VERSION}
+        FESSPLG_ELK_VERSION: ${FESSPLG_ELK_VERSION}
     #    restart: unless-stopped
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}

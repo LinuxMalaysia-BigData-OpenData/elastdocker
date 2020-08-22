@@ -19,7 +19,7 @@
    <a href="https://github.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess/issues">
         <img src="https://img.shields.io/github/issues/sherifabdlnaby/elastdocker.svg" alt="GitHub issues">
    </a>
-   <a href="https://raw.githubusercontent.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess/blob/master/LICENSE">
+   <a href="https://raw.githubusercontent.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess/master/LICENSE">
       <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license">
    </a>
 </p>
@@ -28,8 +28,8 @@
 Elastic Stack (AKA **ELK**) Docker Composition, preconfigured with **Security**, **Monitoring**, Tools such as **ElastAlert** for alerting, **Rubban** and **Curator**.
 This setup include plugins for Fess. Fess Crawler is a crawler library for crawling a web site and a file system.
 
+Based on [Elastdocker](https://github.com/sherifabdlnaby/elastdocker) and 
 Based on [Official Elastic Docker Images](https://www.docker.elastic.co/)
-Based on [Elastdocker](https://github.com/sherifabdlnaby/elastdocker)
 
 Stack Version: [7.8.1](https://www.elastic.co/blog/elastic-stack-7-8-1-released).
 > You can change Elastic Stack version by setting `ELK_VERSION` in `.env` file and rebuild your images. Any version >= 7.0.0 is compatible with this template.
@@ -111,7 +111,7 @@ Elastdocker differs from `deviantony/docker-elk` in the following points.
 
 Username: `elastic` Password: `changeme` (or `ELASTIC_PASSWORD` value in `.env`)
 
-> Modify `.env` file for your needs, most importantly `ELASTIC_PASSWORD` that setup your superuser `elastic`'s password, `ELASTICSEARCH_HEAP` & `LOGSTASH_HEAP` for Elasticsearch & Logstash Heap Size and `ELK_VERSION` for, yk, Stack Version.
+> Modify `.env` file for your needs, most importantly `ELASTIC_PASSWORD` that setup your superuser `elastic`'s password, `ELASTICSEARCH_HEAP` & `LOGSTASH_HEAP` for Elasticsearch & Logstash Heap Size, FESSPLG_ELK_VERSION for Fess elasticsearch plugin and `ELK_VERSION` for, yk, Stack Version.
 
 > Notice that Kibana is configured to use HTTPS, so you'll need to write `https://` before `localhost:5601` in the browser.
 
