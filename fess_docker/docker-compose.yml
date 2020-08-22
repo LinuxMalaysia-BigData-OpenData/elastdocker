@@ -1,0 +1,39 @@
+version: "3.7"
+
+# Make sure elastic cluster all green by accessing Kibana Cluster Monitoring
+#  Note about FESS_DICTIONARY_PATH https://github.com/codelibs/fess/issues/1967
+
+networks:
+  default:
+    external:
+      name: elastic
+
+services:
+
+  # Nginx Service
+  # https://github.com/bitnami/bitnami-docker-nginx
+  ngxproxy01:
+    image: bitnami/nginx:latest
+    container_name: ngxproxy01
+    volumes:
+      - ./nginx-elasticsearch.conf:/opt/bitnami/nginx/conf/server_blocks/nginx-elasticsearch.conf:ro
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "19200:19200"
+
+  fess01:
+    image: codelibs/fess:13.8.2
+    container_name: fess01
+    environment:
+      - RUN_ELASTICSEARCH=false
+      - "ES_HTTP_URL=http://ngxproxy01:19200"
+      - "FESS_DICTIONARY_PATH=/usr/share/elasticsearch/config/dictionary/"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

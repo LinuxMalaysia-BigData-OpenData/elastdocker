@@ -1,0 +1,4 @@
+# Make sure nginx config for elasticsearch password is change for your side. nginx-elasticsearch.conf
+# echo -n "user:pass" | base64
+# https://trac.nginx.org/nginx/ticket/1074
+docker-compose up -d

@@ -279,3 +279,31 @@ elastdocker_fess/elasticsearch/config/elasticsearch.yml
 # https://github.com/codelibs/fess/issues/1967
 configsync.config_path: /usr/share/elasticsearch/config/dictionary
 ```
+
+### To Start Fess
+
+Make sure nginx config file nginx-elasticsearch.conf,  for elasticsearch password is change. Refer https://trac.nginx.org/nginx/ticket/1074
+
+     ```bash
+     echo -n "user:pass" | base64
+     ```
+
+     ```bash
+     cd elastdocker_fess/fess_docker
+     docker-compose up -d
+     ```
+
+### To Stop Fess
+
+     ```bash
+     cd elastdocker_fess/fess_docker
+     docker-compose stop
+     ```
+
+### This will remove all data *** WARNING ***
+
+     ```bash
+     cd elastdocker_fess/fess_docker
+     docker-compose down
+     ```
+
