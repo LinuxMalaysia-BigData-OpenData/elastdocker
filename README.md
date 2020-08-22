@@ -93,11 +93,8 @@ Elastdocker differs from `deviantony/docker-elk` in the following points.
 
 1. Clone the Repository
      ```bash
-     git clone https://github.com/sherifabdlnaby/elastdocker.git
+     git clone https://github.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess.git
      ```
-     or:
-
-     <a href="https://github.com/sherifabdlnaby/elastdocker/generate"><img src="https://user-images.githubusercontent.com/16992394/65464461-20c95880-de5a-11e9-9bf0-fc79d125b99e.png" alt="create repository from template"></a>
 
 2. Initialize Elasticsearch Keystore and SSL Certificates
     ```shell
@@ -280,7 +277,7 @@ elastdocker_fess/elasticsearch/config/elasticsearch.yml
 configsync.config_path: /usr/share/elasticsearch/config/dictionary
 ```
 
-### To Start Fess
+#### To Start Fess
 
 Make sure nginx config file nginx-elasticsearch.conf, for elasticsearch password is change. Refer to https://trac.nginx.org/nginx/ticket/1074 .
 
@@ -295,14 +292,14 @@ cd elastdocker_fess/fess_docker
 docker-compose up -d
 ```
 
-To Stop Fess
+#### To Stop Fess
 
 ```bash
 cd elastdocker_fess/fess_docker
 docker-compose stop
 ```
 
-This will remove all data WARNING 
+#### This will remove all data WARNING 
 
 ```bash
 cd elastdocker_fess/fess_docker
