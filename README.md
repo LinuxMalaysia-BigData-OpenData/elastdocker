@@ -2,24 +2,24 @@
 <img width="680px" src="https://user-images.githubusercontent.com/16992394/65840473-f70ca780-e319-11e9-9245-29ec0a8948d6.png">
 </p>
 <h2 align="center">🐳 Elastic Stack on Docker, with preconfigured security, tools, self-monitoring, and Prometheus Metrics Exporters</h2>
-<h4 align="center">With tools like Curator, Rubban, ElastAlert for Alerting.</h4>
+<h4 align="center">With tools like Fess, Curator, Rubban, ElastAlert for Alerting.</h4>
 <p align="center">
    <a>
-      <img src="https://img.shields.io/badge/Elastic%20Stack-7.8.0-blue?style=flat&logo=elasticsearch" alt="Elastic Stack Version 7^^">
+      <img src="https://img.shields.io/badge/Elastic%20Stack-7.8.1-blue?style=flat&logo=elasticsearch" alt="Elastic Stack Version 7^^">
    </a>
    <a>
-      <img src="https://img.shields.io/github/v/tag/sherifabdlnaby/elastdocker?label=release&amp;sort=semver">
+      <img src="https://img.shields.io/github/v/tag/LinuxMalaysia-BigData-OpenData/elastdocker_fess?label=release&amp;sort=semver">
     </a>
    <a>
       <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions welcome">
    </a>
-   <a href="https://github.com/sherifabdlnaby/elastdocker/network">
-      <img src="https://img.shields.io/github/forks/sherifabdlnaby/elastdocker.svg" alt="GitHub forks">
+   <a href="https://github.com/LinuxMalaysia-BigData-OpenData/elastdockeri_fess/network">
+      <img src="https://img.shields.io/github/forks/LinuxMalaysia-BigData-OpenData/elastdocker.svg" alt="GitHub forks">
    </a>
-   <a href="https://github.com/sherifabdlnaby/elastdocker/issues">
+   <a href="https://github.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess/issues">
         <img src="https://img.shields.io/github/issues/sherifabdlnaby/elastdocker.svg" alt="GitHub issues">
    </a>
-   <a href="https://raw.githubusercontent.com/sherifabdlnaby/elastdocker/blob/master/LICENSE">
+   <a href="https://raw.githubusercontent.com/LinuxMalaysia-BigData-OpenData/elastdocker_fess/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license">
    </a>
 </p>
@@ -29,8 +29,9 @@ Elastic Stack (AKA **ELK**) Docker Composition, preconfigured with **Security**,
 This setup include plugins for Fess. Fess Crawler is a crawler library for crawling a web site and a file system.
 
 Based on [Official Elastic Docker Images](https://www.docker.elastic.co/)
+Based on [Elastdocker](https://github.com/sherifabdlnaby/elastdocker)
 
-Stack Version: [7.8.0](https://www.elastic.co/blog/elastic-stack-7-8-0-released).
+Stack Version: [7.8.1](https://www.elastic.co/blog/elastic-stack-7-8-1-released).
 > You can change Elastic Stack version by setting `ELK_VERSION` in `.env` file and rebuild your images. Any version >= 7.0.0 is compatible with this template.
 
 ### Main Points 📜
